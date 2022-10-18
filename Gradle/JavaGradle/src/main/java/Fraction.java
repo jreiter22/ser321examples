@@ -44,18 +44,27 @@ public class Fraction {
          Fraction frac = new Fraction();
          
          // set the values
-         if (args[0] != null) {
-            frac.setNumerator(args[0]);
-         }
-         else {
-            frac.setNumerator(3);
-         }
-         if (args[1] != null) {
-            frac.setDenominator(args[1]);
-         }
-         else {
-            frac.setDenominator(1);
-         }
+        if (args.length == 2) {
+           try {
+              frac.setNumerator(Integer.parseInt(args[0]));
+              frac.setDenominator(Integer.parseInt(args[1]));
+           } catch (Exception e) {
+               System.out.println("Arguments: " + args[0] + ", " + args[1] + " must be integers.");
+               System.exit(1);
+           }
+        } else if (args.length == 1) {
+           try {
+              frac.setNumerator(Integer.parseInt(args[0]));
+              frac.setDenominator(3);
+           } catch (Exception e) {
+              System.out.println("Argument: " + args[0] + " must be an integer.");
+              System.exit(1);
+           }
+        } else {
+           frac.setNumerator(1);
+           frac.setDenominator(3);
+        }
+        
 
          // print it
          System.out.print("The fraction is: ");
