@@ -45,13 +45,13 @@ public class Fraction {
          
          // set the values
          if (args[0] != null) {
-            frac.setNumerator(3);
+            frac.setNumerator(args[0]);
          }
          else {
             frac.setNumerator(3);
          }
          if (args[1] != null) {
-            denominator = args[1];
+            frac.setDenominator(args[1]);
          }
          else {
             frac.setDenominator(1);
